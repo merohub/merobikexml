@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hitlar Rajbhandari</title>
+            <style>
+@import url('jquery.mobile.min.css');
+
+@import url('jquery-mobile.css');
+
+@import url('css/style.css');
+
+
+@import url('css/elastislide.css');
+
+</style> 
+    </style> 
+
+<!-- slider -->
+    
+        <noscript>
+			<style>
+				.es-carousel ul{
+					display:block;
+				}
+			</style>
+		</noscript>
+		
+        
+
+    <link rel="stylesheet" href="jqm-demos.css">
+	<LINK REL="apple-touch-icon" HREF="apple-touch-icon.png" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<script src="jquery.js"></script>
+   
+    <script src="jquery.mobile.min.js"></script>
+    <style>
+        .nav-search .ui-btn-up-a {
+            background-image: none;
+            background-color: #333;
+        }
+        .nav-search .ui-btn-inner {
+            border-top: 1px solid #888;
+            border-color: rgba(255, 255, 255, .1);
+        }
+        .nav-search .ui-btn.ui-first-child {
+            border-top-width: 0;
+            background: #111;
+        }
+        .userform {
+			padding: .8em 1.2em;
+		}
+        .userform h2 {
+			color: #555;
+			margin: 0.3em 0 .8em 0;
+			padding-bottom: .5em;
+			border-bottom: 1px solid rgba(0,0,0,.1);
+		}
+        .userform label {
+			display: block;
+			margin-top: 1.2em;
+		}
+        .ui-grid-a {
+			margin-top: 1em;
+			padding-top: .8em;
+			margin-top: 1.4em;
+			border-top: 1px solid rgba(0,0,0,.1);
+		}
+    </style>
+
+    <script type="text/javascript">
+	function ajax_json(){
+   
+    var hr = new XMLHttpRequest();
+   
+    var url = "http://hitlarrajbhandari.com/news/news.json";
+    hr.open("GET", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/json", true);
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var data = JSON.parse(hr.responseText);
+			var results = document.getElementById("results");
+	   		//results.innerHTML = data.news2.head +" <br/>Full report: " +data.news2.detail;
+	    results.innerHTML = "";
+	    for(var obj in data){
+	    		results.innerHTML += "<strong>"+data[obj].head+"</strong>"+"<br/>" +data[obj].detail+"<br/>";
+	    }
+	    }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(null); // Actually execute the request
+    document.getElementById("results").innerHTML = "requesting...";
+}
+	</script>
+
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-fixed-page1">
+
+    <div data-role="header" data-theme="f" data-position="fixed">
+        <h1>HOME</h1>
+       
+    </div><!-- /header -->
+
+    <div data-role="content" class="jqm-content">
+
+    	
+		
+
+        <p style="text-align:justify;">
+            <div id="results">
+</div>
+<script type="text/javascript">ajax_json();</script>
+        </p>
+
+	
+               
+       
+       
+
+		<div data-demo-html="#panel-fixed-page1" data-demo-css="true"></div><!--/demo-html -->
+
+	</div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed" data-theme="f">
+    	 
+    </div><!-- /footer -->
+
+	<div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+
+		<ul data-role="listview" data-theme="b" class="nav-search">
+            <li data-icon="delete"><a href="#" data-rel="close">Close this</a></li>
+                <li><a href="#panel-fixed-page2">About</a></li>
+                <li><a href="#panel-fixed-page3">Work</a></li>
+               
+                
+		</ul>
+
+	</div><!-- /panel -->
+
+	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="add-form">
+<li data-icon="delete" style="list-style:none; text-decoration:none;"><a href="#" data-rel="close" style="text-decoration:none; a:hover">Close this</a></li>
+        <form class="userform">
+
+
+<p>Thank you for visiting my website. I am available for freelance, so please feel
+free to contact me to discuss about any project opportunities. </p>
+                    <h2>Follow Me:</h2><ul id="sm-links" style="margin-left:-50px;">
+               
+  <div id="fb-root"> <img src="images/facebookpic.png" border="0"/></div>
+ <a href="https://www.facebook.com/rayesh2013" target="_blank"style="text-decoration:none; a:hover">Facebook Page</a>
+<div class="fb-like-box" data-href="https://www.facebook.com/rayesh2013?ref=hl" data-width="240" data-show-faces="false" data-stream="false" data-header="true">
+
+</div>
+
+
+<p></p>
+ <div class="demo">
+  
+
+    
+</div>
+   
+  </div>
+
+</div><!-- /panel -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="panel-fixed-page2">
+
+    <div data-role="header" data-theme="f">
+        <a href="#panel-fixed-page1" data-role="button" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a><h1>About</h1>
+    </div><!-- /header -->
+
+    <div data-role="content" class="jqm-content">
+
+      <h2><font color="#212426">Skills</font></h2>
+            <p>HTML, CSS, PHOTOSHOP, PHP/MYSQL, JQUERY, AJAX, DREAMWEAVER
+            Basic knowledge in WORDPRESS, INDESIGN 
+            </p> 
+            
+            <h2><font color="#212426">Education</font></h2>
+<p>
+Completed Year: 2011<br />
+Level: <b>Master (Msc in Computing and Information System)</b><br />
+Institution: University of Greenwich<br />
+Address: 30 Park Row, Greenwich SE10 9LS<br />
+
+<i>(Project: A small Library Management System)</i>
+
+</p>
+
+<p>
+<img src="images/skillbar.png" style=" display: block; width: 100%; height: auto;" />
+</p>
+
+
+
+        <a href="#panel-fixed-page1" data-role="button" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+
+    </div><!-- /content -->
+<div data-role="footer" data-position="fixed" data-theme="f">
+         <h4>Hitlar Kumar Rajbhandari</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<div data-role="page" id="panel-fixed-page3">
+
+    <div data-role="header" data-theme="f">
+        <a href="#panel-fixed-page1" data-role="button" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a><h1>Work</h1>
+    </div><!-- /header -->
+
+    <div data-role="content" class="jqm-content">
+
+       
+
+	<div class="container">
+			
+			
+			<div class="content">
+				
+				<div id="rg-gallery" class="rg-gallery">
+					<div class="rg-thumbs">
+						<!-- Elastislide Carousel Thumbnail Viewer -->
+						<div class="es-carousel-wrapper">
+							<div class="es-nav">
+								<span class="es-nav-prev">Previous</span>
+								<span class="es-nav-next">Next</span>
+							</div>
+							<div class="es-carousel">
+								<ul>
+									<li><a href="#"><img src="images/thumbs/1.jpg" data-large="images/1.jpg" alt="image01" /></a></li>
+									<li><a href="#"><img src="images/thumbs/2.jpg" data-large="images/2.jpg" alt="image02" /></a></li>
+									<li><a href="#"><img src="images/thumbs/3.jpg" data-large="images/3.jpg" alt="image03" /></a></li>
+									<li><a href="#"><img src="images/thumbs/4.jpg" data-large="images/4.jpg" alt="image04"  /></a></li>
+									<li><a href="#"><img src="images/thumbs/5.jpg" data-large="images/5.jpg" alt="image05" /></a></li>
+									<li><a href="#"><img src="images/thumbs/6.jpg" data-large="images/6.jpg" alt="image06"  /></a></li>
+									<li><a href="#"><img src="images/thumbs/7.jpg" data-large="images/7.jpg" alt="image07" /></a></li>
+									<li><a href="#"><img src="images/thumbs/8.jpg" data-large="images/8.jpg" alt="image08" /></a></li>
+									<li><a href="#"><img src="images/thumbs/9.jpg" data-large="images/9.jpg" alt="image09" /></a></li>
+									<li><a href="#"><img src="images/thumbs/10.jpg" data-large="images/10.jpg" alt="image10" /></a></li>
+									<li><a href="#"><img src="images/thumbs/11.jpg" data-large="images/11.jpg" alt="image11" /></a></li>
+									
+								</ul>
+							</div>
+						</div>
+						<!-- End Elastislide Carousel Thumbnail Viewer -->
+					</div><!-- rg-thumbs -->
+				</div><!-- rg-gallery -->
+			
+			</div><!-- content -->
+		</div><!-- container -->
+
+
+        <a href="#panel-fixed-page1" data-role="button" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+
+    </div><!-- /content -->
+<div data-role="footer" data-position="fixed" data-theme="f">
+      <h4>Hitlar Kumar Rajbhandari</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.elastislide.js"></script>
+		<script type="text/javascript" src="js/gallery.js"></script>
+    
+</body>
+</html>
